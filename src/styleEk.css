@@ -1,0 +1,278 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Poppins:wght@100&family=Roboto+Mono:wght@100&family=Roboto:wght@100&family=Stylish&display=swap');
+
+
+/* 
+font-family: 'Grape Nuts', 'Roboto Mono', 'Stylish', cursive,
+             'Poppins', sans-serif , 'Roboto', monospace ;
+ */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background: rgb(30,31,30);
+    display: flex;
+    flex-wrap: wrap;
+}
+header{
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    width: 100%;
+}
+header nav {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    background: #000;
+}
+header .heading h1{  
+    padding: 1rem;
+    color: rgb(236, 137, 16);
+    min-height: 4.5rem;
+    font: 600 2.5rem Stylish, sans-serif;;
+}
+
+header button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 12rem;
+    height: 2.3rem;
+    margin: 1.5rem 3rem;
+    padding: 0 0.7rem;
+    border-radius: 2rem;
+    background: none;
+    box-shadow: inset 0 0 5px 4px rgb(236 16 158);
+    color: chartreuse;
+}
+header button .Btnhead1{
+    background: #000;
+    width: 1.5rem;
+    height: 1.55rem;
+    display: block;
+    position: relative;
+    border-radius: 1rem;
+    left: -1.1rem;
+    
+}
+header button .headplus{
+    font: 400 0.9rem sans-serif;
+}
+header button .Btnhead3{
+    background: #000;
+    width: 1.5rem;
+    height: 1.55rem;
+    display: block;
+    position: relative;
+    border-radius: 1rem;
+    right: -1.1rem;
+}
+header button .Btnhead2{
+    font: 600 1.2rem sans-serif;
+    
+}
+
+#headline:active,
+header #add:active{
+    transform: scale(0.95);
+}
+.note .operations .remind:active,
+.note .operations .edit:active,
+.note .operations .delete:active,
+.closebtn:active{
+    transform: scale(0.91);
+}
+
+/* main .container{
+    margin: 1rem;
+    
+} */
+.clockbox{
+    width: 16rem;
+    height: 12.6rem;
+    background: #08010133;
+    margin: 1rem;
+    position: absolute;
+    top: -0.8rem;
+    left: -0.4rem;
+    z-index: 10;
+    border-radius: 2rem;
+    display: none;
+}
+.clockbox .boxcont{
+    
+    background: #d76f05;
+    width: 13.5rem;
+    height: 11.5rem;
+    border-radius: 2rem;
+    padding: 0.8rem;
+    text-align: center;
+    position: relative;
+    left: -0.5rem;
+    margin: 0.65rem auto;
+    z-index: 22;
+}
+
+.clockbox .boxcont .datebox{
+    font: 900 1rem 'roboto mono', sans-serif;
+    color: rgb(112 255 222 / 91%);
+    letter-spacing: -0.035rem;
+    word-spacing: -0.23rem;
+    
+
+}
+.clockbox .boxcont .clockset{
+    font: 500 1rem sans-serif;
+}
+.clockbox .boxcont .clockset input{
+    width: 11.96rem;
+    height: 6rem;
+    color: #131360;
+    border-radius: 50%;
+    padding: 0.9rem;
+    margin: 1rem auto;
+    font-weight: 600;
+    font-size: 1.123rem;
+    border-color: #eb07ae;
+    font-family: 'Stylish';
+    border-style: none;
+    box-shadow: inset 0 0 5px 5px rgb(236 137 16);
+}
+.clockbox #SetAlarm{
+    border-radius: 1rem;
+    width: 6rem;
+    height: 1.65rem;
+    font-weight: 600;
+    font-size: 1rem;
+    position: absolute;
+    bottom: 0.25rem;
+    background: limegreen;
+    /* color: lightcyan; */
+    letter-spacing: 0.0442rem;
+    left: 3.8rem;
+}
+.visible{
+    display: inline-block;
+}
+.clockbox .closebtn {
+    position: absolute;
+    right: -1.7rem;
+    top: 01rem;
+    background: #972525;
+    border-radius: 1rem;
+    width: 1.5rem;
+    height: 1.7rem;
+    color: aquamarine;
+    outline: none;
+    /* border: none; */
+}
+.note{
+    width: 18rem;
+    height: 13rem;
+    background: #2fadad;
+    border-radius: 1rem;
+    overflow-y: scroll;
+    margin: 1.5rem;
+    margin-left: 2rem ;
+    margin-right: 1rem;
+    padding: 0.5rem;
+    position: relative;
+    box-shadow: 0 0 5px 5px rgb(6,31,0);
+
+}
+.note .operations{
+    position: absolute;
+    right: 0;
+    top: 0;
+    outline: none;
+    padding: 0.2rem;
+}
+.note .operations button{
+    cursor: pointer;
+    border: none;
+    margin: 0.25rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+}
+.note .operations .remind {
+    font: 500 1rem sans-serif;
+    color: rgba(190, 214, 212, 0.911);
+    background: rgb(28 22 114);
+}
+.note .operations .remind:hover{
+    background: rgb(190, 214, 212, 0.911);
+    color: rgba(28 22 114);
+    filter: drop-shadow(0 1px 5px rgb(6,0,1));
+
+}
+.note .operations .edit{
+    background: rgb(51, 98, 4);
+    color: rgba(190, 214, 212, 0.911);
+    
+}
+.note .operations .edit:hover{
+    color: rgb(51, 98, 4);
+    background: rgba(190, 214, 212, 0.911);
+    filter: drop-shadow(0 1px 5px rgb(6,0,1));
+}
+.note .operations .delete{
+    color: rgba(190, 214, 212, 0.911);
+    background: rgb(89, 16, 16);
+    
+}
+.note .operations .delete:hover{
+    background: rgba(190, 214, 212, 0.911);
+    color: rgb(89, 16, 16);
+    filter: drop-shadow(0 1px 5px rgb(6,0,1));
+
+}
+.note .main{
+    font: 500 1.2rem cursive;
+    color: darkmagenta;
+    position: relative;
+    top: 2rem;
+    padding: 1rem;
+}
+
+.note textarea{
+    position: absolute;
+    top: 2.5rem;
+    padding: 1rem;
+    width: 16rem;
+    height: 15rem;
+    border: none;
+    margin: 0.5rem 0;
+    margin-bottom: 1rem;
+    background: darkslategrey;
+    color: #22ff85;
+    border-radius: 1.3rem;
+    font: 500 1rem Roboto;
+    letter-spacing: 0.9px;
+    word-spacing: 3.5px;
+}
+footer{
+    width: 100%;
+    height: 3rem;
+    background: #000;
+    color: aqua;
+    margin-top: 1rem;
+    padding: 1rem;
+    text-align: center;
+    z-index: 10;
+    position: fixed;
+    bottom: 0;
+}
+
+
+.hidden {
+    display: none;
+}
