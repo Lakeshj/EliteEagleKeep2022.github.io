@@ -28,7 +28,7 @@ header{
 }
 header nav {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
     background: #000;
@@ -87,7 +87,8 @@ header #add:active{
 .note .operations .remind:active,
 .note .operations .edit:active,
 .note .operations .delete:active,
-.closebtn:active{
+.closebtn:active,
+#SetAlarm:active{
     transform: scale(0.91);
 }
 
@@ -96,8 +97,8 @@ header #add:active{
     
 } */
 .clockbox{
-    width: 16rem;
-    height: 12.6rem;
+    width: 91%;
+    
     background: #08010133;
     margin: 1rem;
     position: absolute;
@@ -106,12 +107,13 @@ header #add:active{
     z-index: 10;
     border-radius: 2rem;
     display: none;
+    backdrop-filter: blur(4px);
 }
 .clockbox .boxcont{
     
     background: #d76f05;
-    width: 13.5rem;
-    height: 11.5rem;
+    width: 83%;
+    /* height: 11.5rem; */
     border-radius: 2rem;
     padding: 0.8rem;
     text-align: center;
@@ -126,19 +128,19 @@ header #add:active{
     color: rgb(112 255 222 / 91%);
     letter-spacing: -0.035rem;
     word-spacing: -0.23rem;
-    
+    padding: 0.3rem;
 
 }
 .clockbox .boxcont .clockset{
     font: 500 1rem sans-serif;
 }
 .clockbox .boxcont .clockset input{
-    width: 11.96rem;
+    width: 100%;
     height: 6rem;
     color: #131360;
     border-radius: 50%;
     padding: 0.9rem;
-    margin: 1rem auto;
+    margin: 0.56rem auto;
     font-weight: 600;
     font-size: 1.123rem;
     border-color: #eb07ae;
@@ -146,18 +148,21 @@ header #add:active{
     border-style: none;
     box-shadow: inset 0 0 5px 5px rgb(236 137 16);
 }
+.clockbox .boxcont .clockset input::placeholder{
+    display: block;
+    flex-wrap: wrap;
+    color: #d76f05;
+    font-size: 1rem;
+}
 .clockbox #SetAlarm{
     border-radius: 1rem;
     width: 6rem;
     height: 1.65rem;
     font-weight: 600;
     font-size: 1rem;
-    position: absolute;
-    bottom: 0.25rem;
     background: limegreen;
-    /* color: lightcyan; */
     letter-spacing: 0.0442rem;
-    left: 3.8rem;
+    transition: all 0.5s cubic-bezier(0.075, 0, 0.076, 1);
 }
 .visible{
     display: inline-block;
@@ -176,7 +181,7 @@ header #add:active{
 }
 .note{
     width: 18rem;
-    height: 13rem;
+    height: 13.56rem;
     background: #2fadad;
     border-radius: 1rem;
     overflow-y: scroll;
@@ -187,6 +192,23 @@ header #add:active{
     position: relative;
     box-shadow: 0 0 5px 5px rgb(6,31,0);
 
+    
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.7s;
+    animation-name: fadeIn;
+    animation-duration: 0.7s;
+    animation-direction: alternate;
+    animation-fill-mode: backwards;
+
+}
+@-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
 }
 .note .operations{
     position: absolute;
@@ -247,7 +269,7 @@ header #add:active{
     position: absolute;
     top: 2.5rem;
     padding: 1rem;
-    width: 16rem;
+    width: 93.5%;
     height: 15rem;
     border: none;
     margin: 0.5rem 0;
@@ -276,3 +298,4 @@ footer{
 .hidden {
     display: none;
 }
+
