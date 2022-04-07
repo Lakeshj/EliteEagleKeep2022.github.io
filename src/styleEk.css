@@ -299,3 +299,10 @@ footer{
     display: none;
 }
 
+@media screen and (max-width:650px) {
+    body{
+        display: flex; 
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
