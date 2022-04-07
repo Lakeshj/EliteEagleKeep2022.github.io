@@ -89,10 +89,19 @@ const AddNote = ( text = '' ) => {
 
 
     const AlarmRing = () => {
-        alert("ring ingggg")
         let audio = new Audio('./src/alarm-clock.mp3');
-        audio.play()
-        console.log();
+
+        let promptvalue = confirm(`   .... Please Have Look ....  \n  ***  You Have Important Note  ***`);
+    
+        if(promptvalue == true){
+            audio.play();
+        }
+        else{
+            setTimeout( () => {
+                audio.play();                
+                AlarmRing();
+            }, 50000);
+        }       
     }
 
 
@@ -101,7 +110,7 @@ const AddNote = ( text = '' ) => {
         const cloock = clocktime.value;
         const date = new Date(cloock);
         const CurDate = new Date();
-
+        
         let setalarmtime = date - CurDate;
         if( setalarmtime >= 0){
             setTimeout( () => {
@@ -118,9 +127,6 @@ const AddNote = ( text = '' ) => {
             dateboxcont.innerHTML = new Date().toLocaleString();
         },1000)
         
-        // setalarm();
-        
-        console.log('alarm');
     });
 
     closeBtn.addEventListener('click', () => {
@@ -132,7 +138,7 @@ const AddNote = ( text = '' ) => {
 
 
     document.body.appendChild(AddNote);
-    console.log("working");
+    // console.log("working");
 
 }
 
