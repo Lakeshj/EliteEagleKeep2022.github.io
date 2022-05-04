@@ -259,7 +259,7 @@ header #add:active{
 }
 .note .main{
     font: 500 1.2rem cursive;
-    color: darkmagenta;
+    color: #000;
     position: relative;
     top: 2rem;
     padding: 1rem;
